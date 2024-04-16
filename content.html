@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Iu em rấc nhìuuu</title>
+</head>
+<body>
+  <audio autoplay controls hidden>
+    <source src="song.mp3" />     
+  </audio>
+
+  <div class="lyrics">
+    <h1>Những khi chạm nhìn vào đôi mắt</h1>
+    <h1>Anh chỉ muốn ôm em thật chặt......</h1>
+    <h1>Để anh nói em nghe</h1>
+    <h1>Nói em nghe lòng anh !!!</h1>
+    <h1>Người ơi em có biết anh đã yêu em rất nhiều</h1>
+    <h1>(yêu em rất nhiều <3 <3) </h1>
+    <h1>Chẳng cần những lý lẽ để nói nên câu tình yêu</h1>
+    <h1>Làm như không quan tâm</h1>
+    <h1>Nhưng anh thật sự nhớ em</h1>
+    <h1>Muốn được chở che cho em những đêm lạnh về</h1>
+    <h1>Anh muốn nói </h1>
+    <h1>Yêu em rất nhiềuuu !!!</h1>
+  </div>
+
+  <div class="img">
+    <img src="/pics/1.jpg" alt="">
+    <img src="/pics/2.jpg" alt="">
+    <img src="/pics/3.jpg" alt="">
+    <img src="/pics/4.jpg" alt="">
+    <img src="/pics/5.jpg" alt="">
+    <img src="/pics/7.jpg" alt="">
+    <img src="/pics/8.jpg" alt="">
+    <img src="/pics/9.jpg" alt="">
+    <img src="/pics/10.jpg" alt="">
+    <img src="/pics/11.jpg" alt="">
+    <img src="/pics/12.jpg" alt="">
+    <img src="/pics/13.jpg" alt="">
+    <img src="/pics/14.jpg" alt="">
+  </div>
+
+  <p class="end">
+    Nớp duuuu
+  </p>
+
+  <script>
+    const lyrics = document.querySelectorAll('h1')
+    const imgs = document.querySelectorAll('img')
+    const end = document.querySelector('p.end')
+
+    end.style.display = 'none'
+    lyrics.forEach((item) => item.style.display = 'none')
+    imgs.forEach((item) => item.style.display = 'none')
+
+    function hidden(currentIndex) {
+      for (let i = 0; i < lyrics.length; ++i) {
+        if (i !== currentIndex) {
+          lyrics[i].style.display = 'none'
+        }
+      }
+    }
+
+    function setLyrics(currentIndex, duration, timeOut) {
+      setTimeout(() => {
+        lyrics[currentIndex].style.display = 'block'
+        lyrics[currentIndex].style.animationDuration = `${duration}`
+        hidden(currentIndex)
+      }, timeOut)
+    }
+
+    setLyrics(0 , '4s'  , 1000  )
+    setLyrics(1 , '6s'  , 4000  )
+    setLyrics(2 , '7s'  , 7500  )
+    setLyrics(3 , '5s'  , 9500  )
+    setLyrics(4 , '8s'  , 14500 )
+    setLyrics(5 , '8s'  , 19000 )
+    setLyrics(6 , '5s'  , 22000 )
+    setLyrics(7 , '10s' , 29000 )
+    setLyrics(8 , '8s'  , 31000 )
+    setLyrics(9 , '8s'  , 36000 )
+    setLyrics(10, '7s'  , 40000 )
+    setLyrics(11, '5s'  , 42000 ) 
+    
+    let i = 0
+    setInterval(() => {
+      imgs[i].style.display = 'block'
+      for (let index = 0; index < imgs.length; ++index) {
+        if (index !== i) {
+          imgs[index].style.display = 'none'
+        }
+      }
+      ++i
+    }, 3000)
+
+    setTimeout(() => {
+      end.style.display = 'block'
+    }, 42000)
+  </script>
+</body>
+</html>
